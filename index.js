@@ -9,8 +9,7 @@ const userRoutes = require('./src/routes/userRoute');
 const bookingRoutes = require('./src/routes/bookingRoutes');
 const hallRoutes = require('./src/routes/hallRoutes')
 
-app.use(express.json());
-app.use(cors({origin:true,credentials:true}));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(cookieParser());
 
