@@ -5,15 +5,18 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const ConnectDB = require("./src/utils/db/db");
-const userRoutes = require('./src/routes/userRoute')
+const userRoutes = require('./src/routes/userRoute');
+const bookingRoutes = require('./src/routes/bookingRoutes');
+const hallRoutes = require('./src/routes/hallRoutes')
 
 app.use(express.json());
 app.use(cors({origin:true,credentials:true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.use('/api/v1/users',userRoutes)
-
+app.use('/api/v1/users',userRoutes);
+app.use('/api/v1/bookings', bookingRoutes)
+app.use('/api/v1/hallBookings', hallRoutes)
 
 app.get("/", (req,res) => {
     res.status(200).json("Welcome to Meeting Room Booking");

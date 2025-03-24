@@ -2,9 +2,7 @@ const mongoose = require("mongoose");
 const moment = require("moment");
 
 const hallSchema = new mongoose.Schema({
-    name: { type: String, required: true, unique: true },
-    description: { type: String },
-    location: { type: String }
+    name: { type: String, required: true, unique: true }
 });
 
 hallSchema.index({ name: 1 });
